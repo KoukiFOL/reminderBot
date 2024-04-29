@@ -14,14 +14,13 @@ function sendMessage(title, deadLine, asignee, note) {
     # 期限が近づいております！\n##タイトル\n${title}\n## 締め切り${deadLine}\n##担当者\n${asignee}\n## メモ\n${note}`)
   content = {
     username: "reminderBot",
-    content:`<@${userIds[asignee]}>
-# 期限が近づいております！\n
+    content:`# 期限が近づいております！\n
 ## タイトル
 ${title}
 ## 締め切り
 ${deadLine.getMonth()+1}月${deadLine.getDate()}日
 ## 担当者
-${asignee}
+<@${userIds[asignee]}>
 ## メモ
 ${note} `
 }
